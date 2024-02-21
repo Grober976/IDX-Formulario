@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/ui/screens/home_screen.dart';
+import 'package:myapp/ui/theme/app_theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,13 +14,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body:  Center(
-          child: 
-          Text("Hello idx",style: TextStyle(fontWeight: FontWeight.bold, fontSize: 80
-          ),)
-        )
-      )
+      theme: AppTheme(selectedColor: 4).getTheme(),
+      home: const HomeScreen()
     );
   }
 }  
