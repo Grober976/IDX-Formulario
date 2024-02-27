@@ -75,28 +75,27 @@ class multipleCheckbox extends StatefulWidget {
 }
 
 class _multipleCheckboxState extends State<multipleCheckbox> {
-  bool checkboxValue1 = true;
+  bool? _checkboxValue1 = false;
   bool checkboxValue2 = true;
   bool checkboxValue3 = true;
 
   @override
   Widget build(BuildContext context) {
-    bool checkboxValue1 = false;
-    bool checkboxValue2 = true;
-    bool checkboxValue3 = true;
     return Column(
       children: <Widget>[
         // Primera opcion de la lista
         CheckboxListTile(
-          value: checkboxValue1,
-          onChanged: (bool? value) // el valor de default es nulo
+          value: _checkboxValue1,
+          onChanged: (bool? newvalue) // el valor de default es nulo
               {
             setState(() {
-              checkboxValue1 = value!;
+              _checkboxValue1 = newvalue!;
             });
           },
           title: const Text("Opcion 1"),
           subtitle: const Text("Descripcion de la opcion 1"),
+          controlAffinity: ListTileControlAffinity.leading,
+          tristate: true,
         ),
 
         const Divider(height: 12),
