@@ -14,9 +14,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: AppTheme(selectedColor: 4).getTheme(),
-      home: const FormularioCompetencias()
-    );
+        debugShowCheckedModeBanner: false,
+        theme: AppTheme(selectedColor: 4).getTheme(),
+        home: FormularioCompetencias());
   }
-}  
+}
