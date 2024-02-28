@@ -48,54 +48,61 @@ class SnackBarPage extends StatelessWidget {
 }
 
 class PreguntaCheckBox extends StatelessWidget {
-  PreguntaCheckBox({super.key});
+  const PreguntaCheckBox({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text("data"),
-        Text("data 1"),
         const SizedBox(
           width: 50,
           height: 50,
         ),
-        Text("data 2"),
-        multipleCheckbox()
+        Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: SizedBox(
+            width: MediaQuery.of(context).size.width,
+            child: const Text(
+              "Aqui va la Primera pregunta:",
+              textAlign: TextAlign.left,
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+            ),
+          ),
+        ),
+        const MultipleCheckbox()
       ],
     );
   }
 }
 
-class multipleCheckbox extends StatefulWidget {
-  multipleCheckbox({super.key});
+class MultipleCheckbox extends StatefulWidget {
+  const MultipleCheckbox({super.key});
 
   @override
-  State<multipleCheckbox> createState() => _multipleCheckboxState();
+  State<MultipleCheckbox> createState() => _MultipleCheckboxState();
 }
 
-class _multipleCheckboxState extends State<multipleCheckbox> {
-  bool? _checkboxValue1 = false;
-  bool checkboxValue2 = true;
-  bool checkboxValue3 = true;
-
+class _MultipleCheckboxState extends State<MultipleCheckbox> {
+  bool checkboxValue1 = false;
+  bool checkboxValue2 = false;
+  bool checkboxValue3 = false;
+  var suma = 0;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
         // Primera opcion de la lista
         CheckboxListTile(
-          value: _checkboxValue1,
-          onChanged: (bool? newvalue) // el valor de default es nulo
+          value: checkboxValue1,
+          onChanged: (bool? value) // el valor de default es nulo
               {
             setState(() {
-              _checkboxValue1 = newvalue!;
+              checkboxValue1 = value!;
             });
           },
-          title: const Text("Opcion 1"),
-          subtitle: const Text("Descripcion de la opcion 1"),
-          controlAffinity: ListTileControlAffinity.leading,
-          tristate: true,
+          title: const Text("Opcion 2"),
+          subtitle: const Text("Descripcion de la opcion 2"),
+          controlAffinity: ListTileControlAffinity.platform,
         ),
 
         const Divider(height: 12),
@@ -110,6 +117,7 @@ class _multipleCheckboxState extends State<multipleCheckbox> {
           },
           title: const Text("Opcion 2"),
           subtitle: const Text("Descripcion de la opcion 2"),
+          controlAffinity: ListTileControlAffinity.platform,
         ),
 
         const Divider(height: 12),
