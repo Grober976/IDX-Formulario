@@ -20,9 +20,9 @@ class AppTheme {
       useMaterial3: true,
       colorSchemeSeed: colorList[selectedColor],
       appBarTheme: AppBarTheme(
-        titleTextStyle: TextStyle(
-            color: const Color.fromARGB(230, 255, 255, 255),
-            fontSize: 25,
+        titleTextStyle: const TextStyle(
+            color: Color.fromARGB(230, 255, 255, 255),
+            fontSize: 18,
             fontWeight: FontWeight.bold),
         centerTitle: true,
         backgroundColor: colorList[selectedColor],

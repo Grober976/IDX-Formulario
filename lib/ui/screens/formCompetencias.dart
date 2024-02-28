@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/ui/bloques/preguntasF1.dart';
 
 class FormularioCompetencias extends StatelessWidget {
-  FormularioCompetencias({super.key});
+  const FormularioCompetencias({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Competencias F1"),
+          title: const Text("Competencias F1"),
         ),
-        body: Column(
+        body: const Column(
           children: [
             PreguntaCheckBox(),
-            const SnackBarPage(),
+            SnackBarPage(),
           ],
         ));
   }
@@ -47,6 +46,7 @@ class SnackBarPage extends StatelessWidget {
   }
 }
 
+// Widget de la pregunta
 class PreguntaCheckBox extends StatelessWidget {
   const PreguntaCheckBox({super.key});
 
@@ -75,6 +75,7 @@ class PreguntaCheckBox extends StatelessWidget {
   }
 }
 
+// Las opciones de la
 class MultipleCheckbox extends StatefulWidget {
   const MultipleCheckbox({super.key});
 

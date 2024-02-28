@@ -8,18 +8,16 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Aplicativo"),
+        title: const Text("Aplicativo"),
       ),
-      body: _HomeView(),
+      body: const _HomeView(),
 
     );
   }
 }
 
 class _HomeView extends StatelessWidget {
-  const _HomeView({
-    super.key,
-  });
+  const _HomeView();
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +25,7 @@ class _HomeView extends StatelessWidget {
       itemCount: appMenuItems.length,
       itemBuilder: (context, index) {
         final MenuItem = appMenuItems[index];
-        return Text("data");
+        return const Text("data");
       },
 
       );

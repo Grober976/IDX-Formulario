@@ -16,6 +16,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: AppTheme(selectedColor: 4).getTheme(),
-        home: FormularioCompetencias());
+        home: const FormularioCompetencias());
   }
 }
